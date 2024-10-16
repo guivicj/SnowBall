@@ -1,0 +1,530 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+/* --- */
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+/* --- */
+
+#container {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-image: linear-gradient(rgb(79, 79, 100),
+      rgb(42, 42, 68));
+
+}
+
+/* INTERRUPTOR */
+
+.boton {
+  width: 5.5rem;
+  height: 2.8rem;
+
+  display: flex;
+  align-items: center;
+
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+
+  background-image: linear-gradient(rgb(117, 117, 117), rgb(49, 49, 49));
+  border-radius: 1.5rem;
+  border: 0.1rem solid black;
+
+  cursor: default;
+}
+
+.boton::before{
+  content: "";
+  width: 2.8rem;
+  height: 2.8rem;
+
+  background-image: linear-gradient(black, #443c3d);
+  border-radius: 50%;
+
+  transition: transform 0.3s;
+}
+
+/* botón para encender*/
+
+#interruptor:checked+.boton{
+  background-image: linear-gradient(#b6deff, #6bbdff);
+}
+
+#interruptor:checked+.boton::before {
+  transform: translateX(2.6rem);
+  background-image: linear-gradient(#fff0f2, #a59fa0);
+}
+
+/* propiedades boton encendido*/
+
+#interruptor:checked~.bola {
+  display: flex
+}
+
+.bola {
+
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+
+  height: 35rem;
+  width: 35rem;
+
+  display: none;
+
+  box-shadow: .1rem .1rem 1rem #fff;
+}
+
+
+.bolarriba {
+  display: flex;
+  flex-direction: row;
+  height: 50%;
+  justify-content: space-between;
+
+}
+
+.boladerecha {
+  width: 17.5rem;
+  height: 17.5rem;
+  background-image: linear-gradient(rgb(151, 121, 231), rgb(202, 243, 245));
+  border-radius: 0% 100% 0% 0%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.bolaizq {
+  width: 17.5rem;
+  height: 17.5rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+
+  background-image: linear-gradient(rgb(151, 121, 231), rgb(202, 243, 245));
+  border-radius: 100% 0% 0% 0%;
+}
+
+/* PARTE CASA */
+
+.casa {
+  height: 6rem;
+  width: 8rem;
+
+  display: flex;
+  flex-direction: column;
+
+  background-image: url("../img/descarga.jpg");
+  background-size: cover;
+  box-shadow: 0rem 0.1rem .8rem rgba(0, 0, 0, .5);
+}
+
+.tejado {
+  border-left: 4rem solid transparent;
+  border-right: 4rem solid transparent;
+  border-bottom: 3rem solid rgb(253, 128, 128);
+}
+
+.ventanas {
+
+  height: 45%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1rem;
+}
+
+.ventana {
+  height: 1.8rem;
+  width: 1.8rem;
+
+  background-color: rgb(255, 255, 136);
+  border-radius: 50%;
+  box-shadow: .2rem 0rem 1rem rgba(255, 255, 136, .5);
+
+  filter: blur(.15rem);
+}
+
+.puerta {
+  flex: auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.entrada {
+  height: 100%;
+  width: 2.2rem;
+  background-image: linear-gradient(rgb(138, 102, 61), rgb(199, 152, 97));
+  border: .1rem solid rgb(122, 91, 49);
+  border-bottom: transparent;
+  box-shadow: .1rem .1rem .1rem rgba(0, 0, 0, .2);
+  filter: blur(.03rem);
+}
+
+/* PARTE ARBOL */
+
+.pino {
+  height: 80%;
+  width: 50%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.tronco {
+  width: 2rem;
+  height: 2.5rem;
+
+  background-image: linear-gradient(rgb(99, 58, 32), rgb(134, 70, 31));
+}
+
+.arbol {
+  border-left: 3.2rem solid transparent;
+  border-right: 3.2rem solid transparent;
+  /* altura del triangulo */
+  border-bottom: 9rem solid rgb(83, 145, 83);
+}
+
+/* PARTE SUELO */
+
+.suelo {
+
+  display: flex;
+  flex-direction: row;
+  height: 50%;
+  justify-content: space-between;
+}
+
+.sueloder {
+  width: 17.5rem;
+  height: 17.5rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+
+  background-image: linear-gradient(rgb(255, 255, 255), rgb(134, 146, 148));
+  border-radius: 0% 0% 100% 0%;
+}
+
+.sueloizq {
+  width: 17.5rem;
+  height: 17.5rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+
+  background-image: linear-gradient(rgb(255, 255, 255), rgb(134, 146, 148));
+  border-radius: 0% 0% 0% 100%;
+}
+
+.bnieve {
+
+  height: .8rem;
+  width: .8rem;
+  border-radius: 50%;
+
+  background-color: white;
+
+  /* animation: nevar 2s infinite ease-in-out; */
+}
+
+.bnieve:nth-of-type(1) {
+  position: absolute;
+  top: 22rem;
+  left: 45rem;
+  animation: nevar 1.8s infinite ease-in-out;
+}
+
+.bnieve:nth-of-type(2) {
+  position: absolute;
+  top: 14rem;
+  left: 46.8rem;
+  animation: nevar 1.4s infinite ease-in-out;
+}
+
+.bnieve:nth-of-type(3) {
+  position: absolute;
+  top: 15.3rem;
+  left: 48rem;
+  animation: nevar 2s infinite ease-in-out;
+}
+
+.bnieve:nth-of-type(4) {
+  position: absolute;
+  top: 13.6rem;
+  left: 50rem;
+  animation: nevar 1.9s infinite ease-in-out;
+}
+
+.bnieve:nth-of-type(5) {
+  position: absolute;
+  top: 12.5rem;
+  left: 52rem;
+  animation: nevar 2.3s infinite ease-in-out;
+}
+
+.bnieve:nth-of-type(6) {
+  position: absolute;
+  top: 12rem;
+  left: 53.5rem;
+  animation: nevar 2.8s infinite ease-in-out;
+}
+
+.bnieve:nth-of-type(7) {
+  position: absolute;
+  top: 11.5rem;
+  left: 55rem;
+  animation: nevar 2.5s infinite ease-in-out;
+}
+
+.bnieve:nth-of-type(8) {
+  position: absolute;
+  top: 11rem;
+  left: 56.8rem;
+  animation: nevar 2.5s infinite ease-in-out;
+}
+
+.bnieve:nth-of-type(9) {
+  position: absolute;
+  top: 10.8rem;
+  left: 58rem;
+  animation: nevar 2.7s infinite ease-in-out;
+}
+
+/* sensacion de densidad de nieve */
+
+.bnieve:nth-of-type(10) {
+  position: absolute;
+  top: 22rem;
+  left: 44.5rem;
+  animation: nevar 1.5s infinite ease-in-out;
+}
+
+.bnieve:nth-of-type(11) {
+  position: absolute;
+  top: 17rem;
+  left: 45.8rem;
+  animation: nevar 1.8s infinite ease-in-out;
+}
+
+.bnieve:nth-of-type(12) {
+  position: absolute;
+  top: 15.3rem;
+  left: 47rem;
+  animation: nevar 1.8s infinite ease-in-out;
+}
+
+.bnieve:nth-of-type(13) {
+  position: absolute;
+  top: 13.8rem;
+  left: 50.8rem;
+  animation: nevar 2s infinite ease-in-out;
+}
+
+.bnieve:nth-of-type(14) {
+  position: absolute;
+  top: 13.5rem;
+  left: 51.8rem;
+  animation: nevar 2.8s infinite ease-in-out;
+}
+
+.bnieve:nth-of-type(15) {
+  position: absolute;
+  top: 15rem;
+  left: 54.5rem;
+  animation: nevar 2.4s infinite ease-in-out;
+}
+
+.bnieve:nth-of-type(16) {
+  position: absolute;
+  top: 11.5rem;
+  left: 56rem;
+  animation: nevar 1.8s infinite ease-in-out;
+}
+
+.bnieve:nth-of-type(17) {
+  position: absolute;
+  top: 15rem;
+  left: 58rem;
+  animation: nevar 2.5s infinite ease-in-out;
+}
+
+.bnieve:nth-of-type(18) {
+  position: absolute;
+  top: 12rem;
+  left: 59rem;
+  animation: nevar 2.5s infinite ease-in-out;
+}
+
+/* nieve derecha */
+
+.bnieve:nth-of-type(19) {
+  position: absolute;
+  top: 19rem;
+  right: 45rem;
+  animation: nevar 1.8s infinite ease-in-out;
+}
+
+.bnieve:nth-of-type(20) {
+  position: absolute;
+  top: 17rem;
+  right: 46.8rem;
+  animation: nevar 1.4s infinite ease-in-out;
+}
+
+.bnieve:nth-of-type(21) {
+  position: absolute;
+  top: 15.3rem;
+  right: 48rem;
+  animation: nevar 2s infinite ease-in-out;
+}
+
+.bnieve:nth-of-type(22) {
+  position: absolute;
+  top: 13.6rem;
+  right: 50rem;
+  animation: nevar 1.9s infinite ease-in-out;
+}
+
+.bnieve:nth-of-type(23) {
+  position: absolute;
+  top: 12.5rem;
+  right: 52rem;
+  animation: nevar 2.3s infinite ease-in-out;
+}
+
+.bnieve:nth-of-type(24) {
+  position: absolute;
+  top: 12rem;
+  right: 53.5rem;
+  animation: nevar 2.8s infinite ease-in-out;
+}
+
+.bnieve:nth-of-type(25) {
+  position: absolute;
+  top: 11.5rem;
+  right: 55rem;
+  animation: nevar 2.5s infinite ease-in-out;
+}
+
+.bnieve:nth-of-type(26) {
+  position: absolute;
+  top: 11rem;
+  right: 56.8rem;
+  animation: nevar 2.5s infinite ease-in-out;
+}
+
+.bnieve:nth-of-type(27) {
+  position: absolute;
+  top: 10.8rem;
+  right: 58rem;
+  animation: nevar 2.7s infinite ease-in-out;
+}
+
+/* sensacion de densidad de nieve */
+
+.bnieve:nth-of-type(28) {
+  position: absolute;
+  top: 22rem;
+  right: 44.5rem;
+  animation: nevar 1.5s infinite ease-in-out;
+}
+
+.bnieve:nth-of-type(29) {
+  position: absolute;
+  top: 17rem;
+  right: 45.8rem;
+  animation: nevar 1.8s infinite ease-in-out;
+}
+
+.bnieve:nth-of-type(30) {
+  position: absolute;
+  top: 15.3rem;
+  right: 47rem;
+  animation: nevar 1.8s infinite ease-in-out;
+}
+
+.bnieve:nth-of-type(31) {
+  position: absolute;
+  top: 13.8rem;
+  right: 50.8rem;
+  animation: nevar 2s infinite ease-in-out;
+}
+
+.bnieve:nth-of-type(32) {
+  position: absolute;
+  top: 13.5rem;
+  right: 51.8rem;
+  animation: nevar 2.8s infinite ease-in-out;
+}
+
+.bnieve:nth-of-type(33) {
+  position: absolute;
+  top: 15rem;
+  right: 54.5rem;
+  animation: nevar 2.4s infinite ease-in-out;
+}
+
+.bnieve:nth-of-type(34) {
+  position: absolute;
+  top: 11.5rem;
+  right: 56rem;
+  animation: nevar 1.8s infinite ease-in-out;
+}
+
+.bnieve:nth-of-type(35) {
+  position: absolute;
+  top: 15rem;
+  right: 58rem;
+  animation: nevar 2.5s infinite ease-in-out;
+}
+
+.bnieve:nth-of-type(36) {
+  position: absolute;
+  top: 12rem;
+  right: 59rem;
+  animation: nevar 2.5s infinite ease-in-out;
+}
+
+/* animacion de nevar */
+@keyframes nevar {
+  from{
+    opacity: 0;
+  }
+  to {
+    top: 25rem;
+  }
+}
